@@ -24,4 +24,9 @@ export default class FlappyBird {
     this.running = true;
     this.animate();
   }
+
+  click(){
+    this.play();
+    this.bird.flap();
+  }
 }
