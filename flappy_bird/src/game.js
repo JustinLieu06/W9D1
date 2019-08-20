@@ -8,15 +8,15 @@ export default class FlappyBird {
     this.restart();
   }
    animate(){
-     while(this.running === true){
-       
-
-     }
-     
+       this.level.animate(this.ctx);
+       this.bird.animate(this.ctx);
+       requestAnimationFrame(this.animate.bind(this));
    }
 
    restart(){
      this.running = false;
+     this.bird = new Bird(this.dimensions);
+     this.level = new Level(this.dimensions);
      this.animate();
   }
 
